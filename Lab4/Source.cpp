@@ -16,7 +16,7 @@ public:
 	List() :frontPointer(NULL) {};
 	~List()
 	{
-
+		deleteAll();
 	}
 	Item* search(int data) 
 	{
@@ -206,6 +206,18 @@ int main()
 	{
 		std::cout << "Nothing Happened\n";
 	}
+	myList.pushBack(4);							//4
+	myList.deleteFront();
+	myList.pushBack(3);							//3
+	if (myList.popBack(popNum))					
+	{
+		std::cout << popNum << "\n";
+	}
+	myList.pushBack(6);							//6
+	if (myList.popFront(popNum))				
+	{
+		std::cout << popNum << "\n";
+	}
 	myList.pushBack(9);							//9
 	myList.pushFront(1);						//1 9
 	myList.pushFront(3);						//3 1 9
@@ -220,7 +232,7 @@ int main()
 	{
 		std::cout << popNum << "\n";
 	}
-	if (myList.popFront(popNum))					//3 1
+	if (myList.popFront(popNum))				//3 1
 	{
 		std::cout << popNum << "\n";
 	}
