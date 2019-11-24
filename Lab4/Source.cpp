@@ -61,11 +61,11 @@ public:
 	}
 	void insertBefore(Item* loc, int data)
 	{
-		if (frontPointer == NULL || frontPointer == loc || loc == NULL)
+		if (frontPointer == NULL || frontPointer == loc)
 		{
 			pushFront(data);
 		}
-		else
+		else if (loc != NULL)
 		{
 			Item* insertItem = new Item();
 			Item* place = frontPointer;
@@ -84,11 +84,7 @@ public:
 		{
 			pushFront(data);
 		}
-		else if (loc ==NULL)
-		{
-			pushBack(data);
-		}
-		else
+		else if (loc !=NULL)
 		{
 			Item* insertItem = new Item();
 			Item* place = frontPointer;
@@ -271,5 +267,8 @@ int main()
 	myList.deleteAll();							//Empty check
 	std::cout << "deleteAll() called: ";
 	myList.Display();
+	char enterChar;
+	std::cout << "Enter any char to continue:\n";
+	std::cin >> enterChar;
 	return 0;
 }
